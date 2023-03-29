@@ -17,6 +17,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 		{
 			tutor.GET("/", controllers.GetAllTutores)
 			tutor.POST("/", controllers.CreateTutor)
+			tutor.PATCH("/:id", controllers.AlterTutor)
 		}
 	}
 

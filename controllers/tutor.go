@@ -28,3 +28,20 @@ func CreateTutor(c *gin.Context) {
 	database.DB.Create(&tutor)
 	c.JSON(http.StatusOK, tutor)
 }
+
+func AlterTutor(c *gin.Context) {
+	var tutor models.Tutor
+	id := c.Params.ByName("id")
+
+	database.DB.First(&tutor, id)
+
+	if err := c.ShouldBindJSON(&tutor); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	database.DB.Model(&tutor).UpdateColumns(tutor)
+	c.JSON(http.StatusOK, tutor)
+}

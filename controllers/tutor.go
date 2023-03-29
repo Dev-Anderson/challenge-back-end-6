@@ -45,3 +45,38 @@ func AlterTutor(c *gin.Context) {
 	database.DB.Model(&tutor).UpdateColumns(tutor)
 	c.JSON(http.StatusOK, tutor)
 }
+
+func GetIDTutor(c *gin.Context) {
+	var tutor models.Tutor
+	id := c.Params.ByName("id")
+	database.DB.First(&tutor, id)
+
+	if tutor.ID == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": "Tutor não encontrado",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, tutor)
+}
+
+func DeleteTutor(c *gin.Context) {
+	var tutor models.Tutor
+	id := c.Params.ByName("id")
+
+	database.DB.First(&tutor, id)
+
+	if tutor.ID == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": "Tutor não encontrado",
+		})
+		return
+	}
+
+	database.DB.Delete(&tutor, id)
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Tutor deletado com sucesso!",
+	})
+}

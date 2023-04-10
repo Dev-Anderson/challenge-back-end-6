@@ -46,6 +46,7 @@ A plataforma deve permitir ao usuário criar um perfil, visualizar os Pets na fi
  ☑ Teste com o Postman as rotas criadas <br>
 
 ## 🔰 Tarefas da semana 02
+[trello](https://trello.com/b/005pszqz/alura-challenge-back-end-6-semana-2) <br>
 🔲 Criar entidade de abrigo (deve ter ligação com a entidade Pets) <br>
 🔲 Criar entidade de Pets (deve ter ligação com o abrigo) <br>
 🔲 Requisição para criar perfil de um novo abrigo <br>
@@ -63,6 +64,7 @@ A plataforma deve permitir ao usuário criar um perfil, visualizar os Pets na fi
 🔲 Teste do Postman <br>
 
 ## 🔰 Tarefas da semana 03 
+[trello](https://trello.com/b/7Rcwmzcg/alura-challenge-back-end-6-semana-3-e-4) <br>
 🔲 Teste de unidade <br>
 🔲 Teste de integração <br>
 🔲 Autenticação abrigos (login e senha) <br>

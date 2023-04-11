@@ -1,0 +1,114 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API para o aplicativo AdoPet",
+        "title": "AdoPet",
+        "contact": {
+            "name": "API AdoPet",
+            "url": "https://www.google.com/",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "0.0.1"
+    },
+    "host": "localhost:8080/",
+    "paths": {
+        "/home": {
+            "get": {
+                "description": "Rota para testar a API",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "home"
+                ],
+                "summary": "Rota para testar a API",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/tutor": {
+            "get": {
+                "description": "Rota para consultar todos os Tutores",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Tutor"
+                ],
+                "summary": "Consulta todos os Tutores",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Tutor"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Criar um novo Tutor",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Tutor"
+                ],
+                "summary": "Criar um novo Tutor",
+                "parameters": [
+                    {
+                        "description": "Informe os dados do Tutor",
+                        "name": "Tutor",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Tutor"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Tutor"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Tutor": {
+            "type": "object",
+            "properties": {
+                "cidade": {
+                    "type": "string"
+                },
+                "foto": {
+                    "type": "string"
+                },
+                "nome": {
+                    "type": "string"
+                },
+                "sobre": {
+                    "type": "string"
+                },
+                "telefone": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 package models
 
 type Tutor struct {
-	ID       int    `json:"id" gorm:"primaryKey"`
+	ID       int    `json:"id" gorm:"primaryKey" swaggerignore:"true"`
 	Foto     string `json:"foto"`
 	Nome     string `json:"nome"`
 	Telefone string `json:"telefone"`

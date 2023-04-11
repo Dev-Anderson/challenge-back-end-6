@@ -8,6 +8,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Consulta todos os Tutores godoc
+// @Summary		Consulta todos os Tutores
+// @Description 	Rota para consultar todos os Tutores
+// @Schemes
+// @Tags 		Tutor
+// @Accet 		json
+// @Produce 	json
+// @Success		200 {object} 	models.Tutor
+// @Router 		/tutor 		[get]
 func GetAllTutores(c *gin.Context) {
 	var tutores []models.Tutor
 	database.DB.Find(&tutores)
@@ -16,6 +25,15 @@ func GetAllTutores(c *gin.Context) {
 
 }
 
+// Criar um tutor godoc
+// @Summary 	Criar um novo Tutor
+// @Description		Criar um novo Tutor
+// @Tags 		Tutor
+// @Accept 		json
+// @Produce 	json
+// @Param	Dados do Tutor	body	models.Tutor	true	"Informe os dados do Tutor"
+// @Success		200 {object}	models.Tutor
+// @Router 		/tutor 		[post]
 func CreateTutor(c *gin.Context) {
 	var tutor models.Tutor
 	if err := c.ShouldBindJSON(&tutor); err != nil {

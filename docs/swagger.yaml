@@ -1,0 +1,75 @@
+definitions:
+  models.Tutor:
+    properties:
+      cidade:
+        type: string
+      foto:
+        type: string
+      nome:
+        type: string
+      sobre:
+        type: string
+      telefone:
+        type: string
+    type: object
+host: localhost:8080/
+info:
+  contact:
+    email: support@swagger.io
+    name: API AdoPet
+    url: https://www.google.com/
+  description: API para o aplicativo AdoPet
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  title: AdoPet
+  version: 0.0.1
+paths:
+  /home:
+    get:
+      description: Rota para testar a API
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Rota para testar a API
+      tags:
+      - home
+  /tutor:
+    get:
+      description: Rota para consultar todos os Tutores
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Tutor'
+      summary: Consulta todos os Tutores
+      tags:
+      - Tutor
+    post:
+      consumes:
+      - application/json
+      description: Criar um novo Tutor
+      parameters:
+      - description: Informe os dados do Tutor
+        in: body
+        name: Tutor
+        required: true
+        schema:
+          $ref: '#/definitions/models.Tutor'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Tutor'
+      summary: Criar um novo Tutor
+      tags:
+      - Tutor
+swagger: "2.0"

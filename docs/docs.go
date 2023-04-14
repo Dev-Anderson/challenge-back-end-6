@@ -24,6 +24,58 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/abrigo": {
+            "get": {
+                "description": "Rota para consultar todos os Abrigos",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Abrigo"
+                ],
+                "summary": "Consulta todos os Abrigos",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Abrigo"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Criar um novo perfil de Abrigo",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Abrigo"
+                ],
+                "summary": "Criar um novo perfil de Abrigo",
+                "parameters": [
+                    {
+                        "description": "Informe os dados do Abrigo",
+                        "name": "Abrigo",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Abrigo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Abrigo"
+                        }
+                    }
+                }
+            }
+        },
         "/home": {
             "get": {
                 "description": "Rota para testar a API",
@@ -98,6 +150,29 @@ const docTemplate = `{
         }
     },
     "definitions": {
+        "models.Abrigo": {
+            "type": "object",
+            "properties": {
+                "cidade": {
+                    "type": "string"
+                },
+                "foto": {
+                    "type": "string"
+                },
+                "nome": {
+                    "type": "string"
+                },
+                "sobre": {
+                    "type": "string"
+                },
+                "telefone": {
+                    "type": "string"
+                },
+                "uf": {
+                    "type": "string"
+                }
+            }
+        },
         "models.Tutor": {
             "type": "object",
             "properties": {

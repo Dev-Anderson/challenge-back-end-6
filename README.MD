@@ -47,10 +47,10 @@ A plataforma deve permitir ao usuário criar um perfil, visualizar os Pets na fi
 
 ## 🔰 Tarefas da semana 02
 [trello](https://trello.com/b/005pszqz/alura-challenge-back-end-6-semana-2) <br>
-🔲 Criar entidade de abrigo (deve ter ligação com a entidade Pets) <br>
-🔲 Criar entidade de Pets (deve ter ligação com o abrigo) <br>
-🔲 Requisição para criar perfil de um novo abrigo <br>
-🔲 Requisição para exibir todos os abrigos <br>
+☑ Criar entidade de abrigo (deve ter ligação com a entidade Pets) <br>
+☑ Criar entidade de Pets (deve ter ligação com o abrigo) <br>
+☑ Requisição para criar perfil de um novo abrigo <br>
+☑ Requisição para exibir todos os abrigos <br>
 🔲 Requisição para exibir um abrigo pelo ID <br>
 🔲 Requisição para atualizar um abrigo <br>
 🔲 Requisição para deletar um abrigo <br>

@@ -1,4 +1,19 @@
 definitions:
+  models.Abrigo:
+    properties:
+      cidade:
+        type: string
+      foto:
+        type: string
+      nome:
+        type: string
+      sobre:
+        type: string
+      telefone:
+        type: string
+      uf:
+        type: string
+    type: object
   models.Tutor:
     properties:
       cidade:
@@ -25,6 +40,40 @@ info:
   title: AdoPet
   version: 0.0.1
 paths:
+  /abrigo:
+    get:
+      description: Rota para consultar todos os Abrigos
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Abrigo'
+      summary: Consulta todos os Abrigos
+      tags:
+      - Abrigo
+    post:
+      consumes:
+      - application/json
+      description: Criar um novo perfil de Abrigo
+      parameters:
+      - description: Informe os dados do Abrigo
+        in: body
+        name: Abrigo
+        required: true
+        schema:
+          $ref: '#/definitions/models.Abrigo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Abrigo'
+      summary: Criar um novo perfil de Abrigo
+      tags:
+      - Abrigo
   /home:
     get:
       description: Rota para testar a API

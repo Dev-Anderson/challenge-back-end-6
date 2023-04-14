@@ -25,6 +25,11 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			tutor.GET("/:id", controllers.GetIDTutor)
 			tutor.DELETE("/:id", controllers.DeleteTutor)
 		}
+		abrigo := main.Group("abrigo")
+		{
+			abrigo.POST("/", controllers.CreateAbrigo)
+			abrigo.GET("/", controllers.GetAllAbrigo)
+		}
 	}
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))

@@ -34,42 +34,13 @@ A plataforma deve permitir ao usuário criar um perfil, visualizar os Pets na fi
 </p>
 </div>
 
-## 🔰 Tarefas da semana 01 
+## 🔰 **Coisas para fazer**
 
- ☑ Iniciar o projeto<br>
- ☑ Criar a tabela para tutor<br>
- ☑ Requisição para criar um tutor <br>
- ☑ Requisição para alterar um tutor <br>
- ☑ Requisição para exibir todos os tutores <br>
- ☑ Requisição para exibir um tutor filtrando pelo ID <br>
- ☑ Requisição para deletar um tutor <br>
- ☑ Teste com o Postman as rotas criadas <br>
-
-## 🔰 Tarefas da semana 02
-[trello](https://trello.com/b/005pszqz/alura-challenge-back-end-6-semana-2) <br>
-☑ Criar entidade de abrigo (deve ter ligação com a entidade Pets) <br>
-☑ Criar entidade de Pets (deve ter ligação com o abrigo) <br>
-☑ Requisição para criar perfil de um novo abrigo <br>
-☑ Requisição para exibir todos os abrigos <br>
-☑ Requisição para exibir um abrigo pelo ID <br>
-☑ Requisição para atualizar um abrigo <br>
-☑ Requisição para deletar um abrigo <br>
-🔲 Requisição para criar um PET (o pet deve ter ligação com o abrigo) <br>
-☑ Requisição para exibir todos os pets <br>
-☑ Requisição para exibir um pet pelo ID <br>
-☑ Requisição para atualizar um pet pelo ID <br>
-☑ Requisição para deletar um pet pelo ID <br>
-🔲 Requisição para criar uma nova adoção <br>
-🔲 Requisição para deletar uma adoção pelo ID <br>
-🔲 Teste do Postman <br>
-
-## 🔰 Tarefas da semana 03 
-[trello](https://trello.com/b/7Rcwmzcg/alura-challenge-back-end-6-semana-3-e-4) <br>
+🔲 Requisição para deletar um abrigo <br>
+🔲 Requisição para deletar um pet <br>
+🔲 Adicionar no swagger a rota de deletar abrigo <br>
+🔲 Adicionar no swagger a rota de deletar pet <br>
 🔲 Teste de unidade <br>
 🔲 Teste de integração <br>
-🔲 Autenticação abrigos (login e senha) <br>
-🔲 Autenticação tutores (login e senha) <br>
-🔲 Regra de paginação <br>
-🔲 Deploy da aplicação em um provedor gratis <br>
-
-
+🔲 Autenticação Abrigos (login e senha) <br>
+🔲 Autenticação pet (login e senha) <br>

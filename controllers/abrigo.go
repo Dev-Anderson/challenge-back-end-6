@@ -45,6 +45,16 @@ func GetAllAbrigo(c *gin.Context) {
 	c.JSON(http.StatusOK, abrigo)
 }
 
+// Alterar Abrigo
+// @Summary Alterar um abrigo existente.
+// @Description Alterar um abrigo no banco de dados
+// @ID alterAbrigo
+// @Produce json
+// @Param id path int true "ID do abrigo a ser alterado"
+// @Param abrigo body models.Abrigo true "Dados do abrigo a serem atualizado"
+// @Success 200 {object} models.Abrigo
+// @Failure 400 {object} gin.H
+// @Router /abrigo/{id} [put]
 func AlterAbrigo(c *gin.Context) {
 	var abrigo models.Abrigo
 	id := c.Params.ByName("id")
@@ -59,5 +69,20 @@ func AlterAbrigo(c *gin.Context) {
 	}
 
 	database.DB.Model(&abrigo).UpdateColumns(abrigo)
+	c.JSON(http.StatusOK, abrigo)
+}
+
+func GetIDAbrigo(c *gin.Context) {
+	var abrigo models.Abrigo
+	id := c.Params.ByName("id")
+	database.DB.First(&abrigo, id)
+
+	if abrigo.ID == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": "Abrigo nao encontrado",
+		})
+		return
+	}
+
 	c.JSON(http.StatusOK, abrigo)
 }

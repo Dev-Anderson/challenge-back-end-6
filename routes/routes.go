@@ -31,6 +31,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			abrigo.GET("/", controllers.GetAllAbrigo)
 			abrigo.PATCH("/:id", controllers.AlterAbrigo)
 			abrigo.GET("/:id", controllers.GetIDAbrigo)
+			abrigo.DELETE("/:id", controllers.DeleteAbrigo)
 		}
 	}
 

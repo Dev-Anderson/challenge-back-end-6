@@ -86,3 +86,23 @@ func GetIDAbrigo(c *gin.Context) {
 
 	c.JSON(http.StatusOK, abrigo)
 }
+
+func DeleteAbrigo(c *gin.Context) {
+	var abrigo models.Abrigo
+	id := c.Params.ByName("id")
+
+	database.DB.First(&abrigo, id)
+
+	if abrigo.ID == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": "Abrigo nao encontrado",
+		})
+		return
+	}
+
+	database.DB.Delete(&abrigo, id)
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Abrigo deletado com sucesso!",
+	})
+}

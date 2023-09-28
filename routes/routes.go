@@ -29,6 +29,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 		{
 			abrigo.POST("/", controllers.CreateAbrigo)
 			abrigo.GET("/", controllers.GetAllAbrigo)
+			abrigo.PATCH("/:id", controllers.AlterAbrigo)
 		}
 	}
 

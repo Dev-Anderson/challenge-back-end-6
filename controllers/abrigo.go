@@ -44,3 +44,20 @@ func GetAllAbrigo(c *gin.Context) {
 	database.DB.Find(&abrigo)
 	c.JSON(http.StatusOK, abrigo)
 }
+
+func AlterAbrigo(c *gin.Context) {
+	var abrigo models.Abrigo
+	id := c.Params.ByName("id")
+
+	database.DB.First(&abrigo, id)
+
+	if err := c.ShouldBindJSON(&abrigo); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	database.DB.Model(&abrigo).UpdateColumns(abrigo)
+	c.JSON(http.StatusOK, abrigo)
+}

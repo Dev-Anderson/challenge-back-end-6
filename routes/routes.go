@@ -3,6 +3,7 @@ package routes
 import (
 	"adopet/controllers"
 	"adopet/docs"
+	"adopet/middleware"
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
@@ -17,7 +18,17 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 		{
 			home.GET("/", controllers.GetHome)
 		}
-		tutor := main.Group("tutor")
+		user := main.Group("user")
+		{
+			user.GET("/", controllers.GetAllUser)
+			user.POST("/", controllers.CreateUser)
+		}
+		login := main.Group("login")
+		{
+			login.POST("/", controllers.Login)
+		}
+
+		tutor := main.Group("tutor", middleware.Auth())
 		{
 			tutor.GET("/", controllers.GetAllTutores)
 			tutor.POST("/", controllers.CreateTutor)
@@ -25,7 +36,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			tutor.GET("/:id", controllers.GetIDTutor)
 			tutor.DELETE("/:id", controllers.DeleteTutor)
 		}
-		abrigo := main.Group("abrigo")
+		abrigo := main.Group("abrigo", middleware.Auth())
 		{
 			abrigo.POST("/", controllers.CreateAbrigo)
 			abrigo.GET("/", controllers.GetAllAbrigo)

@@ -33,5 +33,5 @@ func GetDatabase() {
 		panic(err)
 	}
 
-	DB.AutoMigrate(&models.Tutor{}, &models.Abrigo{}, &models.Pet{})
+	DB.AutoMigrate(&models.Tutor{}, &models.Abrigo{}, &models.Pet{}, &models.Login{}, &models.User{})
 }

@@ -244,6 +244,49 @@
                     }
                 }
             }
+        },
+        "/tutor/{id}": {
+            "patch": {
+                "description": "Alterar um tutor",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Tutor"
+                ],
+                "summary": "Alterar um Tutor existente",
+                "operationId": "AlterarTutor",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID do tutor a ser alterado",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Dados do Tutor",
+                        "name": "tutor",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Tutor"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Tutor"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {}
+                    }
+                }
+            }
         }
     },
     "definitions": {

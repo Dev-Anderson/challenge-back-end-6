@@ -47,6 +47,17 @@ func CreateTutor(c *gin.Context) {
 	c.JSON(http.StatusOK, tutor)
 }
 
+// Alterar Tutor
+// @Summary Alterar um Tutor existente
+// @Description Alterar um tutor
+// @ID AlterarTutor
+// @Produce json
+// @Tags Tutor
+// @Param id path int true "ID do tutor a ser alterado"
+// @Param tutor body models.Tutor true "Dados do Tutor"
+// @Success 200 {object} models.Tutor
+// @Failure 400 {object} error
+// @Router /tutor/{id} [patch]
 func AlterTutor(c *gin.Context) {
 	var tutor models.Tutor
 	id := c.Params.ByName("id")

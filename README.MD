@@ -35,9 +35,7 @@ A plataforma deve permitir ao usuário criar um perfil, visualizar os Pets na fi
 </div>
 
 ## 🔰 **Coisas para fazer**
-🔲 Swagger get por ID abrigo 
-🔲 Swagger patch abrigo 
-🔲 Swagger delete abrigo 
+
 🔲 Swagger tutor GET por ID 
 🔲 Swagger tutor Patch 
 🔲 Swagger tutor delete

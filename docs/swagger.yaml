@@ -75,7 +75,7 @@ paths:
       tags:
       - Abrigo
   /abrigo/{id}:
-    put:
+    patch:
       description: Alterar um abrigo no banco de dados
       operationId: alterAbrigo
       parameters:
@@ -101,6 +101,8 @@ paths:
           description: Bad Request
           schema: {}
       summary: Alterar um abrigo existente.
+      tags:
+      - Abrigo
   /home:
     get:
       description: Rota para testar a API

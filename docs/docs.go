@@ -76,10 +76,13 @@ const docTemplate = `{
             }
         },
         "/abrigo/{id}": {
-            "put": {
+            "patch": {
                 "description": "Alterar um abrigo no banco de dados",
                 "produces": [
                     "application/json"
+                ],
+                "tags": [
+                    "Abrigo"
                 ],
                 "summary": "Alterar um abrigo existente.",
                 "operationId": "alterAbrigo",

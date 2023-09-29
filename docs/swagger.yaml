@@ -75,6 +75,27 @@ paths:
       tags:
       - Abrigo
   /abrigo/{id}:
+    delete:
+      description: Exclui um abrigo do banco de dados com base no ID
+      parameters:
+      - description: ID do abrigo para excluir
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Exclui um abrigo por ID
+      tags:
+      - Abrigo
     get:
       description: Recupera um abrigo do banco de dados com base no ID
       parameters:

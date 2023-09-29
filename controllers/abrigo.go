@@ -97,6 +97,15 @@ func GetIDAbrigo(c *gin.Context) {
 	c.JSON(http.StatusOK, abrigo)
 }
 
+// DeleteAbrigo exclui um abrigo por DI
+// @Summary Exclui um abrigo por ID
+// @Description Exclui um abrigo do banco de dados com base no ID
+// @Tags Abrigo
+// @Produce json
+// @Param id path int true "ID do abrigo para excluir"
+// @Success 200 {object} string
+// @Failure 404 {object} error
+// @Router /abrigo/{id} [delete]
 func DeleteAbrigo(c *gin.Context) {
 	var abrigo models.Abrigo
 	id := c.Params.ByName("id")

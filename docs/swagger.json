@@ -100,6 +100,37 @@
                     }
                 }
             },
+            "delete": {
+                "description": "Exclui um abrigo do banco de dados com base no ID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Abrigo"
+                ],
+                "summary": "Exclui um abrigo por ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID do abrigo para excluir",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {}
+                    }
+                }
+            },
             "patch": {
                 "description": "Alterar um abrigo no banco de dados",
                 "produces": [

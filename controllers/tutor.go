@@ -99,6 +99,16 @@ func GetIDTutor(c *gin.Context) {
 	c.JSON(http.StatusOK, tutor)
 }
 
+// DeleteAbrigo exclui um tutor por ID
+// @Summary Exlcui um tutor por ID
+// @Description Exclui um tutor
+// @Tags Tutor
+// @Produce json
+// @Produce json
+// @Param id path int true "ID do tutor para excluir"
+// @Success 200 {object} string
+// @Failure 404 {object} error
+// @router /tutor/{id} [delete]
 func DeleteTutor(c *gin.Context) {
 	var tutor models.Tutor
 	id := c.Params.ByName("id")

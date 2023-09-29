@@ -193,6 +193,28 @@ paths:
       tags:
       - Tutor
   /tutor/{id}:
+    delete:
+      description: Exclui um tutor
+      parameters:
+      - description: ID do tutor para excluir
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Exlcui um tutor por ID
+      tags:
+      - Tutor
     get:
       description: Recupera um tutor
       parameters:

@@ -277,6 +277,38 @@
                     }
                 }
             },
+            "delete": {
+                "description": "Exclui um tutor",
+                "produces": [
+                    "application/json",
+                    "application/json"
+                ],
+                "tags": [
+                    "Tutor"
+                ],
+                "summary": "Exlcui um tutor por ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID do tutor para excluir",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {}
+                    }
+                }
+            },
             "patch": {
                 "description": "Alterar um tutor",
                 "produces": [

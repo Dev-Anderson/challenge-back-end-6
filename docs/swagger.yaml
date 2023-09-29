@@ -193,6 +193,27 @@ paths:
       tags:
       - Tutor
   /tutor/{id}:
+    get:
+      description: Recupera um tutor
+      parameters:
+      - description: ID do tutor para consulta
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Tutor'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Recupera um tutor por ID
+      tags:
+      - Tutor
     patch:
       description: Alterar um tutor
       operationId: AlterarTutor

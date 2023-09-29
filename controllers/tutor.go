@@ -75,6 +75,15 @@ func AlterTutor(c *gin.Context) {
 	c.JSON(http.StatusOK, tutor)
 }
 
+// GETIDTutor recupera um tutor por ID
+// @Summary Recupera um tutor por ID
+// @Description Recupera um tutor
+// @Tags Tutor
+// @Produce json
+// @Param id path int true "ID do tutor para consulta"
+// @Success 200 {object} models.Tutor
+// @Failure 404 {object} error
+// @Router /tutor/{id} [get]
 func GetIDTutor(c *gin.Context) {
 	var tutor models.Tutor
 	id := c.Params.ByName("id")

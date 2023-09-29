@@ -21,7 +21,7 @@ A plataforma deve permitir ao usuário criar um perfil, visualizar os Pets na fi
 | Gorm | ORM para o banco de dados                                      |
 | Postgres | Banco de dados utilizado para aplicação                    |
 | Gin | Framework web escrito em Go                                     |
-| Gin | JWT e Bearer Token                                              |
+| Swagger | Documentação da API com o Swagger                                              |
 <br>
 
 ## 💻 **Figma da aplicação**
@@ -33,10 +33,12 @@ A plataforma deve permitir ao usuário criar um perfil, visualizar os Pets na fi
 </a>
 </p>
 </div>
+<br>
 
-## 🔰 **Coisas para fazer**
 
-🔲 Swagger tutor GET por ID 
-🔲 Swagger tutor Patch 
-🔲 Swagger tutor delete
-🔲 Realizar teste em todas as rotas
+## 💻 **Como rodar o projeto**
+
+1. Clocar o projeto
+2. Rodar o comando para realizar o download das dependências `go mod tidy`
+3. Rodar o projeto com o seguinte comando `go run .`
+4. Abrir o navegador da sua preferencia, acessar o swagger com o seguinte link `http://localhost:8080/swagger/index.html#/`

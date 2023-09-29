@@ -74,6 +74,33 @@ paths:
       summary: Criar um novo perfil de Abrigo
       tags:
       - Abrigo
+  /abrigo/{id}:
+    put:
+      description: Alterar um abrigo no banco de dados
+      operationId: alterAbrigo
+      parameters:
+      - description: ID do abrigo a ser alterado
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Dados do abrigo a serem atualizado
+        in: body
+        name: abrigo
+        required: true
+        schema:
+          $ref: '#/definitions/models.Abrigo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Abrigo'
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: Alterar um abrigo existente.
   /home:
     get:
       description: Rota para testar a API

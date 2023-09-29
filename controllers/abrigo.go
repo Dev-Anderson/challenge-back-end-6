@@ -53,7 +53,7 @@ func GetAllAbrigo(c *gin.Context) {
 // @Param id path int true "ID do abrigo a ser alterado"
 // @Param abrigo body models.Abrigo true "Dados do abrigo a serem atualizado"
 // @Success 200 {object} models.Abrigo
-// @Failure 400 {object} gin.H
+// @Failure 400 {object} error
 // @Router /abrigo/{id} [put]
 func AlterAbrigo(c *gin.Context) {
 	var abrigo models.Abrigo

@@ -35,12 +35,10 @@ A plataforma deve permitir ao usuário criar um perfil, visualizar os Pets na fi
 </div>
 
 ## 🔰 **Coisas para fazer**
-
-🔲 Requisição para deletar um abrigo <br>
-🔲 Requisição para deletar um pet <br>
-🔲 Adicionar no swagger a rota de deletar abrigo <br>
-🔲 Adicionar no swagger a rota de deletar pet <br>
-🔲 Teste de unidade <br>
-🔲 Teste de integração <br>
-🔲 Autenticação Abrigos (login e senha) <br>
-🔲 Autenticação pet (login e senha) <br>
+🔲 Swagger get por ID abrigo 
+🔲 Swagger patch abrigo 
+🔲 Swagger delete abrigo 
+🔲 Swagger tutor GET por ID 
+🔲 Swagger tutor Patch 
+🔲 Swagger tutor delete
+🔲 Realizar teste em todas as rotas

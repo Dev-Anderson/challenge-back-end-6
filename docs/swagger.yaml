@@ -75,6 +75,27 @@ paths:
       tags:
       - Abrigo
   /abrigo/{id}:
+    get:
+      description: Recupera um abrigo do banco de dados com base no ID
+      parameters:
+      - description: ID do abrigo para consulta
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Abrigo'
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Recupera um abrigo por ID
+      tags:
+      - Abrigo
     patch:
       description: Alterar um abrigo no banco de dados
       operationId: alterAbrigo

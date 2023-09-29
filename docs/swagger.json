@@ -69,6 +69,37 @@
             }
         },
         "/abrigo/{id}": {
+            "get": {
+                "description": "Recupera um abrigo do banco de dados com base no ID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Abrigo"
+                ],
+                "summary": "Recupera um abrigo por ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID do abrigo para consulta",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Abrigo"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {}
+                    }
+                }
+            },
             "patch": {
                 "description": "Alterar um abrigo no banco de dados",
                 "produces": [

@@ -73,6 +73,15 @@ func AlterAbrigo(c *gin.Context) {
 	c.JSON(http.StatusOK, abrigo)
 }
 
+// GetIDAbrigo recupera um abrigo por ID
+// @Summary Recupera um abrigo por ID
+// @Description Recupera um abrigo do banco de dados com base no ID
+// @Tags Abrigo
+// @Produce json
+// @Param id path int true "ID do abrigo para consulta"
+// @Success 200 {object} models.Abrigo
+// @Failure 404 {object} error
+// @Router /abrigo/{id} [get]
 func GetIDAbrigo(c *gin.Context) {
 	var abrigo models.Abrigo
 	id := c.Params.ByName("id")

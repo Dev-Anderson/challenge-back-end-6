@@ -9,6 +9,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Login realiza a autenticacao do usuario
+// @Summary Realiza a autenticacao do usuario
+// @Description Autentica o usuario com base nas credenciais fornecidas.
+// @Tags Login
+// @Accept json
+// @Produce json
+// @Param login body models.Login true "Credenciais de login"
+// @Success 200 {object} string
+// @Failure 400 {object} string
+// @Failure 401 {object} string
+// @Failure 500 {object} string
+// @Router /login [post]
 func Login(c *gin.Context) {
 	var login models.Login
 	err := c.ShouldBindJSON(&login)

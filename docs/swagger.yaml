@@ -14,6 +14,13 @@ definitions:
       uf:
         type: string
     type: object
+  models.Login:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
   models.Tutor:
     properties:
       cidade:
@@ -25,6 +32,15 @@ definitions:
       sobre:
         type: string
       telefone:
+        type: string
+    type: object
+  models.User:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      password:
         type: string
     type: object
 host: localhost:8080/
@@ -158,6 +174,40 @@ paths:
       summary: Rota para testar a API
       tags:
       - home
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Autentica o usuario com base nas credenciais fornecidas.
+      parameters:
+      - description: Credenciais de login
+        in: body
+        name: login
+        required: true
+        schema:
+          $ref: '#/definitions/models.Login'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Realiza a autenticacao do usuario
+      tags:
+      - Login
   /tutor:
     get:
       description: Rota para consultar todos os Tutores
@@ -264,4 +314,39 @@ paths:
       summary: Alterar um Tutor existente
       tags:
       - Tutor
+  /user:
+    get:
+      description: Rota para consultar todos os user (rota nao deve ir para producao)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+      summary: Consulta todos os usuarios
+      tags:
+      - User
+    post:
+      consumes:
+      - application/json
+      description: Cria um novo usuario
+      parameters:
+      - description: Dados do usuario
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Criar um novo usuario
+      tags:
+      - User
 swagger: "2.0"

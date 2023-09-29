@@ -9,12 +9,22 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Criar um user
+// @Summary Criar um novo usuario
+// @Description Cria um novo usuario
+// @Tags User
+// @Accept json
+// @Produce json
+// @Param user body models.User true "Dados do usuario"
+// @Success 201
+// @Failure 404 {object} error
+// @Router /user [post]
 func CreateUser(c *gin.Context) {
 	var user models.User
 	err := c.ShouldBindJSON(&user)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"Erorr": "Nao foi possivel vincular o JSON" + err.Error(),
+			"error": "Nao foi possivel vincular o JSON" + err.Error(),
 		})
 		return
 	}
@@ -32,6 +42,15 @@ func CreateUser(c *gin.Context) {
 	c.Status(http.StatusCreated)
 }
 
+// Consulta de todos os user
+// @Summary Consulta todos os usuarios
+// @Description Rota para consultar todos os user (rota nao deve ir para producao)
+// @Schemes
+// @Tags User
+// @Accet json
+// @Produce json
+// @Success 200 {object} models.User
+// @Router /user [get]
 func GetAllUser(c *gin.Context) {
 	var user []models.User
 	database.DB.Find(&user)
